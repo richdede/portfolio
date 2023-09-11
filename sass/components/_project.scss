@@ -1,0 +1,71 @@
+@use "../abstracts" as *;
+// whole component
+.projects {
+  margin-block: 5rem;
+
+  img{
+    width: 100%;
+    height: 22.5rem;
+    object-fit: cover;
+  }
+
+  @include mq(medium) {
+    margin-block: 8.5rem;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 3.75rem;
+  }
+}
+
+
+
+//  each specific project
+.project {
+  position: relative;
+
+  img {
+    transition: opacity 250ms ease-in-out;
+  }
+
+  &__links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  @include mq(large) {
+    &__links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 38%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    // media query for non touch device and for touch devices
+    & {
+      @media (hover: none) {
+        img {
+          opacity: .5;
+        }
+        &__links {
+          display: flex;
+        }
+      }
+
+      @media (hover: hover) {
+        &:is(:hover, :active) img {
+          opacity: .5;
+        }
+
+        &:is(:hover, :active) &__links {
+          display: flex;
+        }
+      }
+    }
+  }
+}

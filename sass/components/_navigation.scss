@@ -1,0 +1,21 @@
+@use "../abstracts" as *;
+
+.nav {
+  
+  --flex-column-gap: #{$navigation-gap};
+  list-style: none;
+  font-family: $navigation-font-family;
+  font-weight: $navigation-font-weight;
+  .icon{
+    fill: $navigation-color;
+    height: 1.5rem;
+    transition: fill 275ms ease;
+    @include mq(medium){
+      height: 2rem;
+    }
+
+    &:is(:hover, :focus) {
+      fill: $navigation-color-hover;
+    }
+  }
+}

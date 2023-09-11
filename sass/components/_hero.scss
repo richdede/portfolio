@@ -1,0 +1,97 @@
+@use "../abstracts" as *;
+
+.hero{
+    // patern
+    .pattern{
+        justify-self: start;
+        left: -16rem;
+        @include mq(small, max){
+            left: -22rem;
+        }
+    }
+    // circle icon
+    .circle{
+        position: absolute;
+        align-self: start;
+        justify-self: end;
+        transform: translate(50%, 75%);
+
+        width: 6rem;
+        stroke: #fff;
+        stroke-width: 5px;
+    }
+
+    img{
+        filter: grayscale(1);
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__information{
+        z-index: 10;
+        margin-top: 1.5rem;
+
+        h1{
+            max-width: 12ch;
+            margin-bottom: 3.75rem;
+            line-height: $heading-line-height-small;
+
+            @include mq(medium){
+              line-height: $heading-line-height-medium;
+            }
+          
+            @include mq(large){
+              line-height: $heading-line-height-large;
+            }
+        }
+        p{
+            max-width: 39ch;
+        }
+
+// hero information media query
+        @include mq(medium,max){
+            h1,p{
+                margin-inline: auto;
+            }
+            
+          text-align: center;
+        }
+
+        @include mq(medium){
+            order: -1;
+            margin-top: 4.5rem;
+        }
+    }
+
+
+    //  hero media query
+@include mq (medium, max){
+    img{
+        margin-inline: auto;
+    }
+}
+
+    @include mq(medium){
+        .even-columns{
+            grid-template-columns: 60% 40%;
+        }
+       
+        &__information{
+            width: 115%;
+        }
+    }
+
+    br{
+        display: none;
+        @include mq(medium){
+            display: block;
+        }
+    
+        @include mq(large){
+            display: none;
+        }
+    
+    }
+}
+
+

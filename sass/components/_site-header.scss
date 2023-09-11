@@ -1,0 +1,13 @@
+@use "../abstracts" as *;
+
+.site-header {
+  position: relative;
+  color: $site-header-color;
+  background-color: $site-header-background-color;
+  padding: $site-header-padding;
+
+  &__inner {
+    @include nav;
+    
+  }
+}

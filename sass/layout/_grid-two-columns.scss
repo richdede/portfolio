@@ -1,0 +1,15 @@
+@use "../abstracts/" as *;
+
+.grid-two-columns{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.75rem 1.25rem;
+
+    @include mq(medium,max){
+        grid-template-columns: 1fr;
+    }
+
+    @include mq(medium){
+        gap: 3.75rem 1.25rem;
+    }
+}

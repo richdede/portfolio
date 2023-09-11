@@ -1,0 +1,46 @@
+@use "../abstracts" as *;
+
+.contact {
+  text-align: center;
+
+
+  &__information{
+    position: relative;
+    height: 100%;
+
+    @include mq(large){
+      padding-bottom: 10rem;
+    }
+    
+  }
+
+  p{
+    max-width: 38ch;
+  }
+
+  .pattern{
+    left: -20rem;
+    top: 17rem;
+    @include mq(large, max){
+      top: 24rem;
+    }
+  }
+
+  // media query's
+  
+  @media (min-width: 30em) and (max-width: 65em) {
+    .container {
+      max-width: 27.8rem;
+    }
+  }
+
+  @include mq(medium, max){
+    &__information{
+      margin-inline: auto;
+    }
+  }
+
+  @include mq(large) {
+    text-align: left;
+  }
+}

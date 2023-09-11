@@ -1,0 +1,174 @@
+@use "colors" as *;
+@use "typography" as *;
+@use "sizes" as *;
+
+$active-theme: $default;
+$enable-media-query-dark-mode: false;
+
+// Contextual
+$color-text-default: $color-primary-200;
+$color-background-default: $color-primary-900;
+$color-text-interactive-default: $color-primary-100;
+$color-text-interactive-hover: $color-accent-400;
+$color-error-default: $color-error-400;
+
+// set to 0 to disable
+$letter-spacing-loose: 0;
+
+$border-radius-1: $size-2;
+$border-radius-2: $size-4;
+
+$box-shadow-1: 0px 6px 5px rgb(0, 0, 0, 0.012),
+  0px 22px 18px rgb(0, 0, 0, 0.018), 0px 100px 80px rgb(0, 0, 0, 0.03);
+
+$box-shadow-2: 0px 6px 5px rgb(0, 0, 0, 0.016),
+  0px 22px 18px rgb(0, 0, 0, 0.024), 0px 100px 80px rgb(0, 0, 0, 0.04);
+
+$box-shadow-3: 0px 6px 5px rgb(0, 0, 0, 0.02), 0px 22px 18px rgb(0, 0, 0, 0.03),
+  0px 100px 80px rgb(0, 0, 0, 0.05);
+
+$box-shadow-4: 0px 6px 5px rgb(0, 0, 0, 0.03), 0px 22px 18px rgb(0, 0, 0, 0.042),
+  0px 100px 80px rgb(0, 0, 0, 0.07);
+
+$box-shadow-5: 0px 6px 5px rgb(0, 0, 0, 0.04), 0px 22px 18px rgb(0, 0, 0, 0.06),
+  0px 100px 80px rgb(0, 0, 0, 0.1);
+
+// body
+$body-font-family: $font-family-base;
+$body-font-size: $font-size-400;
+$body-line-height: 1.75;
+$body-font-weight: $font-weight-default;
+$body-text-color: $color-text-default;
+$body-background-color: $color-background-default;
+
+$link-color: $color-text-interactive-default;
+$link-color-hover: $color-text-interactive-hover;
+
+$heading-font-family: $font-family-base;
+$heading-color-default: $color-primary-100;
+$heading-font-weight: $font-weight-bold;
+$heading-letter-spacing: $letter-spacing-loose;
+$heading-line-height-small: 2.5rem;
+$heading-line-height-medium: 4.5rem;
+$heading-line-height-large: 5.5rem;
+$heading-text-transform: none;
+
+$heading-1-font-size: $font-size-900;
+$heading-1-color: $heading-color-default;
+$heading-2-font-size: $font-size-700;
+$heading-2-color: $heading-color-default;
+$heading-3-font-size: $font-size-600;
+$heading-3-color: $heading-color-default;
+$heading-4-font-size: $font-size-500;
+$heading-4-color: $heading-color-default;
+
+
+// layout
+$grid-gap: $size-5;
+$flex-group-gap: $size-4;
+
+//$hero-padding-block: clamp(15rem, 15vh, 20rem);
+$section-padding-block: clamp(4rem, 10vh, 6rem);
+
+$container-min-margin-inline: $size-7;
+$container-max-width: 69rem;
+$container-max-width-narrow: 40rem;
+$container-max-width-wide: 75rem;
+
+// site header
+$site-header-background-color: $color-primary-900;
+$site-header-color: $color-primary-100;
+$site-header-padding: $size-7 0;
+$site-header-margin: 0;
+$site-header-jusitifcation-small-screens: center;
+$site-header-jusitifcation-large-screens: space-between;
+$site-header-alignment: center;
+
+//navigation
+$navigation-color: $site-header-color;
+$navigation-color-hover: $color-accent-400;
+$navigation-font-size: $font-size-400;
+$navigation-gap: $size-7;
+$navigation-link-text-decoration: none;
+$navigation-font-family: $body-font-family;
+$navigation-font-weight: $body-font-weight;
+
+// site footer
+$footer-background-color: $color-primary-800;
+$footer-text-color: $color-primary-900;
+$footer-link-color: $color-primary-100;
+$footer-link-color-hover: $color-accent-400;
+$footer-link-font-family: $font-family-base;
+$footer-link-text-decoration: none;
+$footer-border: 1px solid $color-primary-100;
+
+
+// buttons
+$button-font-family: $body-font-family;
+$button-font-size: $font-size-300;
+$button-font-weight: $font-weight-bold;
+$button-text-transform: uppercase;
+$button-padding: 0.6em 0;
+$button-border-radius: none;
+$button-text-decoration: underline $color-accent-400 .125rem;
+$button-underline-offset: .6rem;
+$button-primary-color: $color-primary-100;
+$button-primary-background: transparent;
+$button-primary-color-hover: $color-accent-400;
+$button-primary-background-hover: transparent;
+
+// cards
+$card-flow-spacing: $size-2;
+$card-padding: $size-8;
+$card-shadow: $box-shadow-1;
+$card-border-radius: $border-radius-2;
+$card-background-default: $color-primary-100;
+$card-color-default: $body-text-color;
+$card-font-family: $body-font-family;
+$card-line-height: 1.25;
+$card-heading-color-default: $card-color-default;
+$card-heading-font-size: $font-size-600;
+
+// forms
+$form-font-size: $font-size-300;
+
+$form-label-color: var($color-primary-100 / .5);
+$form-label-font-family: $body-font-family;
+$form-label-font-weight: $font-weight-default;
+$form-label-font-size: $form-font-size;
+
+$form-input-color: $color-primary-100;
+$form-input-font-family: $body-font-family;
+$form-input-font-weight: $font-weight-default;
+$form-input-font-size: $form-font-size;
+$form-input-background-color: transparent;
+
+$form-input-border-default: 0;
+$form-input-border-bottom: solid 1px $color-primary-100;
+$form-input-border-bottom-hover: solid 1px $color-accent-400;
+$form-input-border-bottom-error: solid 1px $color-error-400;
+$form-input-text-transform: uppercase;
+$form-input-padding: $size-4;
+$form-input-border-radius: $border-radius-1;
+
+$form-placeholder-color: var($color-primary-100 / .5);
+$form-placeholder-font-family: $form-input-font-family;
+$form-placeholder-font-weight: $form-input-font-weight;
+$form-placeholder-font-size: $form-font-size;
+$form-placeholder-text-transform: uppercase;
+$form-button-justification: end;
+
+$form-error-color:$color-error-400;
+$form-error-font-size: $font-size-200;
+$form-error-letter-spacing: -0.01044rem;
+$form-error-border: 1px solid $color-error-400;
+$form-error-button-align: center;
+
+$form-group-spacing: 0.5rem;
+
+// underlines
+$underline-color:$color-accent-400;
+
+// border
+$border: solid 1px $color-primary-100;
+

@@ -1,0 +1,17 @@
+@use "../abstracts" as *;
+
+.error-icon{
+    visibility: hidden;
+    position: absolute;  
+    right: 0;
+    transition: visibility 250ms ease-in-out;
+}
+
+.error-message{
+    visibility: hidden;
+    justify-self: end;
+    color: $color-error-400;
+    font-size: $form-error-font-size;
+    letter-spacing: $form-error-letter-spacing;
+    transition: visibility 250ms ease-in-out;
+}

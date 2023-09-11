@@ -1,0 +1,52 @@
+@use "sass:meta";
+@use "sass:math";
+@use "sass:map";
+@use "breakpoints" as *;
+@use "tokens" as *;
+@use "sizes" as *;
+
+
+
+@mixin mq($size , $min-max:min) {
+  @if map.has-key($breakpoints, $size) {
+    $breakpoint: map-get($breakpoints, $size);
+    @media screen and (#{$min-max}-width: $breakpoint) {
+      @content;
+    }
+  } @else if meta.type-of($size) == number {
+    @if math.is-unitless($size) {
+      @error 'when using a number with @mq() make sure to include a unit';
+    } @else {
+      @media screen and (min-width: $size) {
+        @content;
+      }
+    }
+  } @else {
+    @error 'the keyword #{$size} is not in the $breakpoints map';
+  }
+}
+
+@mixin heading($fs, $color: $heading-color-default) {
+  font-size: $fs;
+  color: $color;
+
+  font-family: $heading-font-family;
+  text-transform: $heading-text-transform;
+  letter-spacing: $heading-letter-spacing;
+  font-weight: $heading-font-weight;
+}
+
+@mixin nav(){
+  display: flex;
+  gap: $size-4;
+  align-items: $site-header-alignment;
+  justify-content: $site-header-jusitifcation-small-screens;
+  
+  @include mq(medium ,max) {
+    flex-direction: column;
+  }
+
+  @include mq(medium) {
+    justify-content: $site-header-jusitifcation-large-screens;
+  }
+}

@@ -1,0 +1,28 @@
+@use "../abstracts" as *;
+
+.experience{
+
+    @include mq(medium,max){
+        text-align: center;
+    }
+    
+    .container{
+        border-block: $border;
+        padding-block: 2.75rem;
+    
+        @include mq(medium){
+            border-bottom: 0;
+            padding-block: 4.5rem;
+        }
+    }
+    .pattern{
+        justify-self: start;
+        top: 14rem;
+        right: -14rem;
+
+        @include mq(medium,max){
+            top: 29rem;
+        }
+    }
+
+}

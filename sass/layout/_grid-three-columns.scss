@@ -1,0 +1,15 @@
+@use "../abstracts/" as *;
+.grid-three-columns{
+    display: grid;
+    justify-content: center;
+    gap: 1.5rem 0;
+
+    @include mq(medium){
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include mq(large){
+        grid-template-columns: 1fr 1fr 1fr; 
+    }
+   
+}
